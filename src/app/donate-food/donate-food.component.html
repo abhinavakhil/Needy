@@ -1,0 +1,122 @@
+<app-navigation></app-navigation>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-body text-center">
+        <img
+          src="../../assets/image-upload.jpg"
+          class="img-responsive add-ripple"
+          height="300px"
+        />
+        <br />
+        <input type="file" id="real-file" hidden="hidden" multiple />
+        <button type="button" id="custom-button">CHOOSE AN IMAGE</button>
+        <span id="custom-text">No File chosen, yet</span>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- / <h2 class="text-center">Enter Details</h2> -->
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputName">Full Name</label>
+            <input type="text" class="form-control" id="inputName" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputMobile">Mobine Number</label>
+            <input type="number" class="form-control" id="inputMobile" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="1234 Main St"
+          />
+        </div>
+        <div class="form-group">
+          <label for="food-description">Food Description</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            id="food-description"
+          ></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label>Select Country</label>
+            <select
+              class="form-control"
+              (change)="onChangeCountry($event.target.value)"
+            >
+              <option
+                *ngFor="let country of countryInfo; let i = index"
+                value="{{ i }}"
+                >{{ country.CountryName }}</option
+              >
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputState">Select State</label>
+            <select
+              id="inputState"
+              class="form-control"
+              (change)="onChangeState($event.target.value)"
+            >
+              <option *ngIf="stateInfo == ''" value="-1"
+                >--Select State--</option
+              >
+              <option
+                *ngFor="let state of stateInfo; let j = index"
+                value="{{ j }}"
+                >{{ state.StateName }}</option
+              >
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Select City</label>
+            <select class="form-control">
+              <option *ngIf="cityInfo == ''" value="-1">--Select CIty--</option>
+              <option
+                *ngFor="let city of cityInfo; let k = index"
+                value="{{ k }}"
+                >{{ city }}</option
+              >
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary btn-block">
+              Deliver Yourself
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              style="background-color: #2a1745;"
+              routerLink="/get-food"
+            >
+              Pick Up
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.add-ripple {
+  /* //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border: dotted 1px grey;
+}
+#real-file {
+  margin-top: 10px;
+}
+#custom-button {
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+  background-color: #2a1745;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#custom-button:hover {
+  background-color: #492081;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #000;
+}

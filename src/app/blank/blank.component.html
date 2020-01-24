@@ -1,0 +1,48 @@
+<app-navigation></app-navigation>
+<div class="row">
+  <div class="col-md-4 p-5">
+    <img [src]="podiumImage" id="image">
+  </div>
+  <div class="col-md-8">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+          <button type="button" class="btn addbutton" (click)="open(content)" >Add Podium <i class="fas fa-plus"></i></button>
+          <button type="button" class="btn addbutton" >View Podium <i class="fas fa-eye"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h5 class="header">Make Podium </h5>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-12">
+
+                            <div >
+                                <br/>
+                                <br/>
+                                <form (ngSubmit)="GotoPodiumView(f.value)" #f="ngForm">
+                              <input type="text" class="form-control" placeholder="podium Name" id="podiumBody" [(ngModel)]="podiumGroup" name="podiumGroup" required>
+                              <div class="alert alert-danger" *ngIf="f.touched && f.invalid">
+                               please enter the name of podium
+                              </div>
+                              <br/>
+                              <button type="submit" class="btn btn-block" id="mybutton" [disabled]="f.invalid">Next</button>
+                               </form>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </ng-template>
+

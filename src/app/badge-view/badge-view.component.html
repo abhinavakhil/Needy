@@ -1,0 +1,190 @@
+ <div class="row">
+   <!--card1 start-->
+  <div class="col-md-4">
+    <div class="card">
+      <h5 class="card-title text-center heading_text" >
+        Mussoorie is a hill station and 
+        a municipal board in the Dehradun.
+      </h5>
+        <img src="{{badgeImage1}}" class="card-img-top" alt="..." height="200px" (click)="openXl(content)">
+
+      <div class="card-body cardbadgeBody">
+          <h6 class="badgeTextLeft"><q>It is about 35 kilometres from the state capital 
+              of Dehradun and 290 km north of the national 
+              capital of New Delhi.</q>
+              <p>TimesOfIndia</p>
+          </h6>
+      </div>
+    </div>
+  </div>
+  <!--card1 end-->
+
+  <!--card2 start-->
+  <div class="col-md-4">
+    <div class="card">
+        <h5 class="card-title text-center heading_text" >
+            Mussoorie is a hill station and 
+            a municipal board in the Dehradun.
+          </h5>
+            <img src="{{badgeImage2}}" class="card-img-top" alt="..." height="200px" (click)="openXl(content)">
+    
+          <div class="card-body cardbadgeBody" >
+              <h6><q>It is about 35 kilometres from the state capital 
+                  of Dehradun and 290 km north of the national 
+                  capital of New Delhi.</q>
+                  <p>TimesOfIndia</p>
+              </h6>
+          </div>
+    </div>
+  </div>
+ 
+ <!--card2 end-->
+ <!--card3 start-->
+ <div class="col-md-4">
+    <div class="card">
+      <h5 class="card-title text-center heading_text" >
+        Mussoorie is a hill station and 
+        a municipal board in the Dehradun.
+      </h5>
+        <img src="{{badgeImage1}}" class="card-img-top" alt="..." height="200px" (click)="openWithText(content1)">
+
+      <div class="card-body cardbadgeBody">
+          <h6><q>It is about 35 kilometres from the state capital 
+              of Dehradun and 290 km north of the national 
+              capital of New Delhi.</q>
+              <p>TimesOfIndia</p>
+          </h6>
+      </div>
+    </div>
+  </div>
+  
+</div>   <!--row ends-->
+ <!--card3 ends-->
+
+<!--model for showing post view on click with image-->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="jw-modal-background">
+  
+  <div class="modal-body" id="modal-body-image">
+  <div class="row">
+    <div class="col-md-7" style="margin-left:40px">
+      <img src="{{badgeImage2}}" class="img-responsive" id="badgemodelImage">
+    </div>
+    <div class="col-md-4" id="sidemodalComment">
+        <div class="row">
+            <div class="col-md-2">
+              <img src="../assets/1.jpeg" class="img-circle">
+            </div>
+            <div class="col-md-8">
+             <h4 style="margin:10px">John Smith</h4>
+            </div>
+            </div>
+            <hr>
+        <!--for comment-->    
+        <div >
+          <input type="text" class="form-control" placeholder="enter your comment">
+          <hr>  
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+              <img src="../assets/1.jpeg" class="img-responsive" id="userCommentAvatar">
+            </div>
+            <div class="col-md-8">
+             <p id="UserText"><a href="#">Areeb Khan</a> It's a standard formula of successful friendship
+              </p>
+            </div>
+            </div>
+
+          </div>
+
+          <div class="justify-content-center align-item-center"  >
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+         </div>
+  </div>
+</div>
+
+</div>
+</ng-template>
+
+
+<!--model for showing post view on click without image-->
+<ng-template #content1 let-c="close" let-d="dismiss">
+    <div style="float:right">
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <!-- <div class="modal-heading" style="margin-left:20px;margin-bottom:0px">
+    <h6>Gallery</h6>
+    <p>06 August 2019</p>
+    <hr>
+    </div> -->
+    <h3 style="margin-left:20px;"></h3>
+    <div class="modal-body">
+    <div class="row" >
+      <div class="col-md-12">
+        <div>
+           <div >
+             <h5>
+                Inhaling poisonous air is as hazardous as smoking. It is not only the humans who are affected from this polluted environment but also the animals. Air is filled with highly toxic gases. These dangerous gases in environment are released by the power industries that burn fossil fuels, industries that dispose wastes in the water, farmers using pesticides, high usage of artificial lights and loud sounds, etc. Each of these leads to generation of the life threatening cause – pollution.
+
+                Any use of natural resources at a rate higher than the nature’s capacity to restore itself can result in pollution of air, water, and land. Other than human activities, there are a few periodic natural cycles that also result in release of dangerous stuff. Natural activities other than the human activities like volcanic eruption, dust wildfires, etc also result in creation of pollution.
+                
+                Globalization is another major cause of pollution. Globalization has become an effective facilitator of environmental degradation.
+             </h5>
+             <br/>
+             <div class="pdfImage">
+              <h5><img src="../assets\pdf.png" width="50px" height="50px" />
+                 rowniks-recipe-books.pdf</h5>
+              <h5><img src="../assets\pdf.png" width="50px" height="50px" />
+                  swapnils-recipe-books.pdf</h5>
+            </div>
+            <br/>
+             <!--comments-->
+             <span style="margin-left:10px;"><i class="far fa-envelope"  (click)="isCollapsed = !isCollapsed"
+             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Comments</i></span>
+             
+             <div id="collapseExample" [ngbCollapse]="isCollapsed">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-1">
+                       <img src="../assets/1.jpeg" style="border-radius: 50px;width:50px;height:50px;margin-top:0px">
+                      </div>
+                       <div class="col-md-11">
+                          <div class="row">
+                            <div class="col-md-10">
+                                <input type="text" placeholder="write your comment" class="form-control">     
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-success">Send</button>
+                            </div>
+                          </div>
+                       </div>
+                    </div> <!-- row for comments input ends-->
+                    <!-- for user comments-->
+                    <hr>
+                      <div class="row">
+                        <div class="col-md-1">
+                            <img src="../assets/1.jpeg"  style="border-radius: 50px;width:30px;height:30px">
+                        </div>
+                        <div class="col-md-11">
+                          <p style="margin-top:5px">Hey that was cool</p>
+                        </div>
+                      </div>
+                    <!--for user comments ends-->
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!--comments end-->
+           </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </ng-template>

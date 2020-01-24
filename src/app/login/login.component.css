@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+
+.container {
+  padding: 20px;
+  /* margin-top:10px; */
+}
+.card {
+  padding: 10px;
+  border-radius: 15px;
+}
+.btn {
+  background-color: #2a1745;
+  color: #fff;
+}
+.plaintext {
+  color: #2a1745;
+}
+
+/* form {
+  padding: 10px;
+} */
+.signup-link {
+  margin-left: 30%;
+}
+.signup-link :hover {
+  text-decoration-line: none;
+}
+
+.form-control {
+  color: #000000 !important;
+  font-size: 15px;
+  border: none;
+  padding: 0px;
+  padding-left: 10px;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 15px;
+  outline: none;
+  /* -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important; */
+}
+
+.form-control:focus {
+  border-radius: 0px;
+  border-bottom: 1px solid #c70039;
+  margin-bottom: 15px;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+.label {
+  color: grey;
+}
+/* css for full background image
+style="background-image: url('../../assets/landscape-view-country-side-with-mountain-valley-houses-river-tree-rice-field-vector-illustration_142963-118.jpg');
+min-height : 100%;
+min-width : 100%;
+background-size:100% 100%;
+background-repeat:no-repeat;
+overflow-y: hidden;
+overflow-x: hidden;
+" */

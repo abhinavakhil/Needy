@@ -1,0 +1,131 @@
+<!-- podium list view  -->
+<div class="card" *ngFor="let p of podiumUserListData;let i = index">
+  <div class="" id="listView" *ngIf="podiumUserListData[i].type == 4">
+    <p>{{p.uploadedFiles[i]}}</p>
+  </div>
+</div>
+<br/>
+
+    <div class="" id="listView" *ngFor="let p of podiumUserListData;let i = index">
+        <div class="card"  *ngIf="podiumUserListData[i].type == 2">
+        <p >{{ p.title}}</p>
+    </div>
+  </div>
+
+  <!-- for image -->
+  <div *ngFor="let p of podiumUserListData;let i= index">
+    <div class="card card-body" *ngIf="podiumUserListData[i].type == 3">
+       <img src="{{p.uploadedImages[i]}}" width="100%" height="50%">
+    </div>
+  </div>
+  
+  <div *ngFor="let p of podiumUserListData;let i= index">
+      <div class="card card-body" *ngIf="podiumUserListData[i].type == 3">
+          <video width="100%" height="30%" controls>
+            <source src="{{p.uploadedImages[i]}}" types="video/3gp" />
+            Browser not supported
+           </video>
+      </div>
+    </div>
+<!-- podium feed -->
+<div class="card" style="margin-top:20px;" *ngFor="let pUser of podiumUserListData;let i= index">
+    <div class="card-body" *ngIf="podiumUserListData[i].type == 3">
+      <div class="row">
+      <div class="col-md-1">
+          <img src="./assets/1.jpeg" height="50px" class="img-circle" id="postcardImage">
+        </div>
+      <div class="col-md-11">
+          <a><b>{{pUser.group_name}}</b><span style="color:lightgray"><i>.</i> 14m</span> </a>
+          <span style="float:right"><i class="fas fa-angle-down"></i></span>
+      </div> 
+    </div>
+      <div class="row"> 
+        <div class="col-md-11">
+          <br/>
+          <h6>Don't let this chance slip away! Get a free 1 month CDS/AFCAT/CAPF Plus Subscription & start preparing through live courses by the Best Educators. Use code TOPWITHPLUS. Subscribe now!
+              *Re 1 transaction requiredDon't let this chance slip away! Get a free 1 month CDS/AFCAT/CAPF Plus Subscription & start preparing through live courses by the Best Educators. Use code TOPWITHPLUS. Subscribe now!
+              *Re 1 transaction required.</h6>
+
+        <!--image-->
+        <ngb-carousel *ngIf="images" >
+            <ng-template ngbSlide>
+              <div class="row">
+                <div class="col-md-6 card" style="padding:20px">
+                    <img [src]="images[0]" alt="Random first slide" style="width:400px;height:300px" >
+                </div>
+                <div class="col-md-4 card" style="padding:20px">
+                    <img [src]="images[1]" alt="Random second slide" style="width:300px;height:300px" >
+                </div>
+              </div>
+            
+              <div class="carousel-caption"> 
+                 <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="images[2]" alt="Random second slide" style="height:300px;width:100%">
+              <div class="carousel-caption">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="images[3]" alt="Random third slide" style="height:300px;width:100%">
+              <div class="carousel-caption">
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+          
+         <!-- <img [src]="image" alt="preview" class="img-thumbnail" id="postImage"> --> 
+         <div class="card-footer text-muted" id="postCardFooter">
+            <div class="row">
+              <div class="col-md-2">
+                  <i class="far fa-envelope" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"></i>
+                </div>
+            </div>
+           <!--comment row-->
+           <div class="row">
+             <div class="col-md-11">
+               Comments
+                      <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                      <div class="card">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <img src="../assets/1.jpeg" height="40px" width="30px" class="img-circle">
+                          </div>
+                          <div class="col-md-9">
+                              <input type="text" class="form-control" placeholder="write your comment">
+                          </div>
+                          </div>
+                          <hr>
+                          
+
+                          <!--user comments-->
+
+                          <div class="row">
+                              <div class="col-md-2">
+                                <img src="../assets/1.jpeg" height="40px" class="img-circle">
+                              </div>
+                              <div class="col-md-9">
+
+                                  <p style="margin-top:10px;">hey this pic is awesome</p>
+                              </div>
+                              </div>
+                       </div>
+                       </div>
+                      </div>
+             </div>
+           </div>
+           <!--comment row end -->
+          </div>  
+     </div>
+
+    </div>
+
+  </div>
+  </div> 

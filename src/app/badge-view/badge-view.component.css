@@ -1,0 +1,42 @@
+
+
+.heading_text{
+ padding: 10px;
+ text-transform: capitalize;
+}
+.cardbadgeBody{
+    background-color:rgb(226, 221, 221);
+}
+
+#badgemodelImage{
+    height:500px;
+    width:100%; 
+}
+#sidemodalComment{ 
+    background-color: #fff;
+    padding:10px;
+}
+/* for images of modelSidebarComment */
+.img-circle{
+    width:50px;
+    height:50px;
+    border-radius:50px;
+}
+#modal-body-image{
+    background-color: black;
+}
+#userCommentAvatar{
+    width:30px;
+    height:30px;
+    border-radius:30px;
+}
+#UserText{
+    border:solid 0.5px lightgrey;
+    background-color: lightgrey;
+    border-radius:30px;
+    padding:10px;
+}
+.listViewBadge{
+    margin-top:10px;
+}
+

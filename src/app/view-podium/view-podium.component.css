@@ -1,0 +1,142 @@
+.container-fluid{
+  padding:0px;
+  margin:0px;
+}
+.sidebar{
+  height:100%;
+  width: 23%;
+  position:fixed;
+  /* overflow-x:auto for vertical sidebar */
+  overflow-x:auto;
+}
+.img-circle{
+  border-radius:50px;
+  width:50px;
+}
+.list-group-item{
+  border-radius:0px;
+}
+.list-group-item:hover{
+  background-color: grey;
+}
+#midsidebar{
+ background-color:#fff;
+ height:100vh;
+
+}
+.userName{
+  margin-right:50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*for icons*/
+
+.image-icon{
+  width:30px;
+}
+#rightsidebar{
+  padding:0px;
+  margin:0px;
+  width:90px;
+  background-color:lightgray;
+  height:100%;
+  position: fixed;
+  float:right;
+}
+
+.icon-text{
+  font-size:8px;
+  margin-top:5px;
+  padding:5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#textareaheight{
+  padding:20px;
+  height:200px;
+  box-shadow: none;
+}
+textarea{
+  outline:none;
+}
+#mediaFile{
+  height:50px;
+}
+
+#myimage{
+  width:100px;
+  height:100px;
+  margin:5px;
+  text-align: center;
+}
+#myvideo{
+  width:300px;
+  height:200px;
+}
+#plus{
+ color:#fff;
+}
+.myplus{
+  width:90px;
+  height:40px;
+  background-color:#2a1745;
+}
+#caption{
+border:0;
+box-shadow:none;
+}
+#myFile{
+  border:0;
+  box-shadow:none;
+  padding:40px;
+}
+/* user post */
+
+.postuserName{
+  margin-top:0px;
+  margin-left: 20px;
+
+}
+#postCardFooter{
+  background-color: #fff;
+}
+#postImage{
+  width:100%;
+  height:300px;
+}
+.mynav{
+  text-align:center;
+  padding:10px;
+  border:solid 2px rgb(204, 202, 202);
+  background-color:lightgray;
+  box-shadow:30%;
+}
+
+ul li{
+  list-style-type: none;
+}
+.mynav:hover{
+  background-color:rgb(62, 62, 243);
+}
+.listInput{
+  border:0;
+  box-shadow:none;
+}
+.input-group-text{
+  border:0;
+  box-shadow:none;
+}
+
+/* 
+------------------
+for removing dropdown caret symbol
+------------------
+ */
+
+.dropdown-toggle::after{
+   display:none;
+}
+.fa-bars{
+  font-size:20px;
+}

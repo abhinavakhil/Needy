@@ -1,0 +1,9 @@
+.img-circle{
+    border-radius:50px;
+    width:50px;
+  }
+#listView{
+    margin-top:10px;
+    padding:0px;
+    margin-left:10px;
+}

@@ -1,0 +1,15 @@
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import url("https://fonts.googleapis.com/css?family=Cairo&display=swap");
+#welcome-text {
+  transform: translate(0%, 100%);
+}
+.tag {
+  font-family: san-serif;
+}
+.food1 {
+  margin-bottom: 20px;
+}
+
+.food1 img:hover {
+  transform: scale(0.5);
+}

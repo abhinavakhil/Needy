@@ -1,0 +1,22 @@
+.card{
+    padding:20px;
+}
+#badgebutton{
+  background-color:rgb(126, 9, 126);
+  color:#fff;
+  margin-top:50px;
+  margin-bottom: 30px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.badgeheader{
+  color:rgb(126, 9, 126);
+  font-weight: 600px;
+}
+#badgebody{
+    height:50px;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:6px solid grey;
+    box-shadow:none;
+}

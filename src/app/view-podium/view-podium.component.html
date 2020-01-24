@@ -1,0 +1,229 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 col-lg-3">
+      <!-- sidebar start -->
+  
+      <div class="card sidebar">
+           <!-- dropdown navbar start -->
+           <div class="card">
+            <nav class="navbar navbar-light bg-light">
+                <div ngbDropdown class="d-inline-block" placement="bottom-left">
+                    <span id="dropdownBasic1" ngbDropdownToggle class="cursor-pointer"><i class="fas fa-bars"></i></span>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  
+                       <button class="dropdown-item"><i class="fas fa-bookmark"></i> Bookmarks</button>
+                       <button class="dropdown-item"><i class="fas fa-retweet"></i> Referrals</button>
+                       <button class="dropdown-item"><i class="fas fa-cog"></i> Settings</button>
+                       <button class="dropdown-item" routerLink="/"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>                    
+              <a class="navbar-brand" style="margin-left:70px;color:#2a1745;" >podium</a>
+              <img src="../assets/1.jpeg" alt="" class="img-circle" height="50px" width="50px" style="margin-left:30px;" (click)="openUserProfile(content4)">
+               </div>
+            </nav>
+           </div>
+           <!-- navbar end -->
+
+
+
+           
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" 
+                     *ngFor="let pUser of podiumUserdata;let i = index">
+               <img src="./assets/1.jpeg" height="50px" class="img-circle">
+               <a class="userName"   [routerLink]="['/view-podium/',podiumUserId[i]]">{{pUser.group_name}}</a>
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <!--middle view start -->
+   <!--top header-->
+    <div class="col-xl-8 col-lg-8" id="midsidebar">
+      <div class="row " >
+      <div class="col-md-6 " >
+          <ul style="margin-left:-75px;margin-right:-30px">
+              <li class="mynav">
+                <a class="active"  href="#feed" style="color:black;font-size:15px;font-family:'Times New Roman', Times, serif">Feed</a>
+              </li>
+          </ul>
+      </div>
+      <div class="col-md-6" >
+          <ul style="margin-left:-40px;margin-right:-30px;">
+              <li class="mynav">
+                <a class=""  href="#storage" style="color:black;font-size:15px;font-family:'Times New Roman', Times, serif">Storage</a>
+              </li>
+          </ul>
+      </div>
+      </div>
+     <!-- top header ends -->
+      <app-podium-feed [podiumData]='podiumUserdata' [podiumGroupID]='podiumUserId'></app-podium-feed>
+      <!-- <app-viewlist></app-viewlist> -->
+        </div>
+    
+    <!--middle view end-->
+    <div class="col-md-1 col-xs-1 col-lg-1" >
+         <div class="justify-content-center align-item-center">
+            <div class="card"  id="rightsidebar" >
+              <div class="card-body" >
+              <div class="image-icons-text">
+                   <img src="../assets\Form_Icons\1_Add_Text.svg" class="image-icon" (click)="open(content)">
+                   <br/>
+                   <span class="icon-text">Text</span>
+              </div>
+
+              <div class="image-icons-text">
+                  <img src="../assets\Form_Icons\2_Image.svg" class="image-icon" (click)="openMedia(content1)">
+                  <br/>
+                  <span  class="icon-text">Media</span>
+                </div>
+              <div class="image-icons-text">
+                  <img src="../assets\Form_Icons\3_File.svg" class="image-icon" (click)="openFile(content2)">
+                   <br/>
+                  <span  class="icon-text">File</span>
+                </div>
+              <div class="image-icons-text">
+                  <img src="../assets\Form_Icons\4_Checklist.svg" class="image-icon" (click)="openList(content3)">
+                  <br/>
+                  <span class="icon-text">List</span>
+                </div>
+              <div class="image-icons-text">
+                  <img src="../assets\Form_Icons\5_Page.svg" class="image-icon">
+                  <br/>
+                  <span  class="icon-text">Page</span>
+                </div>
+              </div>
+        </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss"  >
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Title :</h4>
+
+
+    </div>
+    <div class="modal-body">
+      <textarea row="5" cols="5" class="form-control" id="textareaheight">
+      </textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button " class=" btn btn-danger" aria-label="Close" (click)="d('Cross click')" id="close"> Close </button>
+      <button type="button" class="btn btn-primary" (click)="c('Save click')">Post</button>
+    </div>
+  </ng-template>
+
+<!--media-->
+<ng-template #content1 let-c="close" let-d="dismiss"  >
+  <div class="modal-header">
+    <h6 class="modal-title" id="modal-basic-title">Create post</h6>
+
+
+  </div>
+  <form >
+  <div class="modal-body">
+      <input type="text" class="form-control " placeholder="Write something..." id="caption">
+      <br/>
+
+        <img  [src]="url" id='myimage' class="img-thumbnail" *ngFor="let url of urls">
+        <!-- <video [src]="url" controls id='myvideo' *ngIf=""></video> -->
+
+  <br/>
+  <input type="file" (change)="onSelectFile($event)" multiple id="fileUpload" style="display:none">
+  <br/>
+  <button type="button" (click)="changeFileName()" class="btn myplus"><i class="fas fa-plus" id="plus"></i></button>
+ </div>
+  <div class="modal-footer">
+    <button type="button " class=" btn btn-danger" aria-label="Close" (click)="d('Cross click')" style="float:left"> Close </button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Post</button>
+  </div>
+  </form>
+</ng-template>
+
+<!--files-->
+<ng-template #content2 let-c="close" let-d="dismiss"  >
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-basic-title">Choose Files :</h6>
+
+
+    </div>
+    <form >
+    <div class="modal-body">
+
+      <input type="file" class="form-control" id="mediaFile" accept=".pdf*" (change)="handleFileInput($event.target.files)" multiple id="myFile">
+      <!-- <iframe [src]="imageUrl" style="width:200px; height:100px;" frameborder="0"></iframe> -->
+    </div>
+    <div class="modal-footer">
+      <button type="button " class=" btn btn-danger" aria-label="Close" (click)="d('Cross click')" style="float:left"> Close </button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Post</button>
+    </div>
+    </form>
+  </ng-template>
+
+<!-- lists-->
+<ng-template #content3 let-c="close" let-d="dismiss"  >
+    <div class="modal-header">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control listInput" placeholder="Add a title" >
+              <div class="input-group-append">
+               <i class="fas fa-plus" style="color:#2a1745;font-size:25px;margin-top:10px"></i>  
+              </div>
+           </div>
+      </div>
+      <div class="modal-body">  
+          <div class="input-group mb-3">
+              <h3 style="background-color:#2a1745;color:#fff;width:40px;height:40px"><span class="text-center" style="margin-left:10px;">1</span></h3>
+                <input type="text" class="form-control listInput" placeholder="Add an item..">
+                  <div class="input-group-append">
+                      <i class="fas fa-trash"  style="color:#2a1745;font-size:30px;margin-top:10px"></i>
+                  </div>
+               </div>    
+          <div class="input-group mb-3">
+              <input type="text" class="form-control listInput" placeholder="Add an item..">
+                <div class="input-group-append">
+                 <i class="fas fa-plus" style="color:#2a1745;font-size:25px;margin-top:10px"></i>  
+                </div>
+             </div>
+             
+      </div>
+      <div class="modal-footer">
+        <button type="button " class=" btn btn-danger" aria-label="Close" (click)="d('Cross click')" style="float:left"> Close </button>
+        <button type="button" class="btn " (click)="c('Save click')" style="background-color:#2a1745;color:#fff">Post</button>
+      </div>
+</ng-template>
+
+<!-- 
+  
+  -------------------------
+    model on clicking on image for user profile 
+
+  -------------------------
+
+-->
+<ng-template #content4 let-c="close" let-d="dismiss">
+    <div class="modal-header" style="background-color: #2a1745;color:#fff">
+      <h4 class="modal-title" id="modal-basic-title">Profile</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="position:relative;height:350px">
+      <img src="../assets/1.jpeg" alt="userProfile"  width="200px" height="180px" style="left:30%;right:50%;position:absolute;border-radius:50%">
+    <br/>
+    <div class="card" style="top:60%">
+      <div class="card-body">
+          <label for="name">Your Name</label> 
+        <div class="input-group">
+            <input type="text" class="form-control" value="Abhinav Akhil">  
+            <!-- <div class="input-group-append">
+               <span class="input-group-text" id="basic-addon2"><i class="fas fa-pen"></i></span>
+              </div>  -->
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal-footer" style="background-color: #2a1745;">
+    </div>
+  </ng-template>
